@@ -1,0 +1,351 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Core */
+  --background: #f0f4f8;
+  --foreground: #1e293b;
+
+  /* Surface */
+  --surface: #ffffff;
+  --surface-variant: #f1f5f9;
+
+  /* Cards */
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --card-elevated: #ffffff;
+  --card-pressed: #f8fafc;
+
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+
+  /* Text */
+  --text: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #f8fafc;
+
+  /* Primary */
+  --primary: #0d9488;
+  --primary-light: #14b8a6;
+  --primary-dark: #0f766e;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f97316;
+  --secondary-light: #fb923c;
+  --secondary-dark: #ea580c;
+  --secondary-foreground: #ffffff;
+
+  /* Tertiary */
+  --tertiary: #65a30d;
+  --tertiary-foreground: #ffffff;
+
+  /* Semantic */
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+  --info: #2563eb;
+  --destructive: #dc2626;
+
+  /* Borders */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --divider: #f1f5f9;
+  --input: #e2e8f0;
+  --ring: #0d9488;
+
+  /* Status */
+  --available: #16a34a;
+  --booked: #d97706;
+  --unavailable: #94a3b8;
+  --urgent: #dc2626;
+  --pending: #2563eb;
+
+  /* Medical specialties */
+  --cardiology: #dc2626;
+  --dermatology: #f97316;
+  --neurology: #7c3aed;
+  --pediatrics: #ec4899;
+  --orthopedics: #2563eb;
+  --general: #16a34a;
+  --dentistry: #0891b2;
+  --ophthalmology: #059669;
+  --psychiatry: #9333ea;
+  --gynecology: #db2777;
+
+  /* Overlay */
+  --shadow: #000000;
+  --scrim: rgba(0, 0, 0, 0.5);
+  --overlay: rgba(15, 23, 42, 0.6);
+
+  /* Disabled */
+  --disabled: #94a3b8;
+  --on-disabled: #e2e8f0;
+
+  /* Notification */
+  --notification: #dc2626;
+
+  /* Radius */
+  --radius: 0.8rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #0d9488;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #0d9488;
+
+  /* Charts */
+  --chart-1: #0d9488;
+  --chart-2: #f97316;
+  --chart-3: #2563eb;
+  --chart-4: #7c3aed;
+  --chart-5: #16a34a;
+}
+
+.dark {
+  /* Core */
+  --background: #0f172a;
+  --foreground: #f8fafc;
+
+  /* Surface */
+  --surface: #1e293b;
+  --surface-variant: #334155;
+
+  /* Cards */
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --card-elevated: #334155;
+  --card-pressed: #475569;
+
+  /* Popover */
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+
+  /* Text */
+  --text: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #0f172a;
+
+  /* Primary */
+  --primary: #2dd4bf;
+  --primary-light: #5eead4;
+  --primary-dark: #14b8a6;
+  --primary-foreground: #0f172a;
+
+  /* Secondary */
+  --secondary: #fb923c;
+  --secondary-light: #fdba74;
+  --secondary-dark: #f97316;
+  --secondary-foreground: #0f172a;
+
+  /* Tertiary */
+  --tertiary: #84cc16;
+  --tertiary-foreground: #0f172a;
+
+  /* Semantic */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --info: #60a5fa;
+  --destructive: #f87171;
+
+  /* Borders */
+  --border: #334155;
+  --border-strong: #475569;
+  --divider: #1e293b;
+  --input: #334155;
+  --ring: #2dd4bf;
+
+  /* Status */
+  --available: #4ade80;
+  --booked: #fbbf24;
+  --unavailable: #64748b;
+  --urgent: #f87171;
+  --pending: #60a5fa;
+
+  /* Medical specialties */
+  --cardiology: #f87171;
+  --dermatology: #fb923c;
+  --neurology: #a78bfa;
+  --pediatrics: #f472b6;
+  --orthopedics: #60a5fa;
+  --general: #4ade80;
+  --dentistry: #22d3ee;
+  --ophthalmology: #34d399;
+  --psychiatry: #c084fc;
+  --gynecology: #f472b6;
+
+  /* Overlay */
+  --shadow: #000000;
+  --scrim: rgba(0, 0, 0, 0.7);
+  --overlay: rgba(0, 0, 0, 0.8);
+
+  /* Disabled */
+  --disabled: #475569;
+  --on-disabled: #334155;
+
+  /* Notification */
+  --notification: #f87171;
+
+  /* Sidebar */
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #2dd4bf;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #334155;
+  --sidebar-ring: #2dd4bf;
+
+  /* Charts */
+  --chart-1: #2dd4bf;
+  --chart-2: #fb923c;
+  --chart-3: #60a5fa;
+  --chart-4: #a78bfa;
+  --chart-5: #4ade80;
+}
+
+@theme inline {
+  /* Core */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Fonts */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+
+  /* Base UI */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+
+  /* Muted + Accent */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Forms */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-divider: var(--divider);
+
+  /* Semantic */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-destructive: var(--destructive);
+
+  /* Text */
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  /* Surface */
+  --color-surface: var(--surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-card-elevated: var(--card-elevated);
+  --color-card-pressed: var(--card-pressed);
+
+  /* Status */
+  --color-available: var(--available);
+  --color-booked: var(--booked);
+  --color-unavailable: var(--unavailable);
+  --color-urgent: var(--urgent);
+  --color-pending: var(--pending);
+
+  /* Medical specialties */
+  --color-cardiology: var(--cardiology);
+  --color-dermatology: var(--dermatology);
+  --color-neurology: var(--neurology);
+  --color-pediatrics: var(--pediatrics);
+  --color-orthopedics: var(--orthopedics);
+  --color-general: var(--general);
+  --color-dentistry: var(--dentistry);
+  --color-ophthalmology: var(--ophthalmology);
+  --color-psychiatry: var(--psychiatry);
+  --color-gynecology: var(--gynecology);
+
+  /* Overlay */
+  --color-shadow: var(--shadow);
+  --color-scrim: var(--scrim);
+  --color-overlay: var(--overlay);
+
+  /* Disabled */
+  --color-disabled: var(--disabled);
+  --color-on-disabled: var(--on-disabled);
+
+  /* Notification */
+  --color-notification: var(--notification);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
