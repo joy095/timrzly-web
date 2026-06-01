@@ -4,12 +4,12 @@ import type { AuthView } from "@better-auth-ui/core";
 import { useAuth } from "@better-auth-ui/react";
 import { type ComponentType, useEffect } from "react";
 
-import { ForgotPassword } from "./forgot-password";
+import { ForgotPasswordForm } from "./forgot-password-form";
 import type { SocialLayout } from "./provider-buttons";
 import { ResetPassword } from "./reset-password";
-import { SignIn } from "./sign-in";
+import { SignInForm } from "./sign-in-form";
 import { SignOut } from "./sign-out";
-import { SignUp } from "./sign-up";
+import { SignUpForm } from "./sign-up-form";
 
 export type AuthProps = {
   className?: string;
@@ -28,10 +28,10 @@ export type AuthProps = {
 const PASSWORD_ONLY_VIEWS = ["signUp", "forgotPassword", "resetPassword"];
 
 const AUTH_VIEWS: Partial<Record<AuthView, ComponentType<AuthProps>>> = {
-  signIn: SignIn,
+  signIn: SignInForm,
   signOut: SignOut,
-  signUp: SignUp,
-  forgotPassword: ForgotPassword,
+  signUp: SignUpForm,
+  forgotPassword: ForgotPasswordForm,
   resetPassword: ResetPassword,
 };
 

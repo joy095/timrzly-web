@@ -4,7 +4,7 @@ import { useAuth } from "@better-auth-ui/react";
 import type { ComponentProps, ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
-import { ChangeEmail } from "./change-email";
+import { ChangeEmailForm } from "./change-email-form";
 import { UserProfile } from "./user-profile";
 
 export type AccountSettingsProps = {
@@ -36,7 +36,7 @@ export function AccountSettings({
       {...props}
     >
       <UserProfile />
-      {(emailAndPassword?.enabled || hasMagicLink) && <ChangeEmail />}
+      {(emailAndPassword?.enabled || hasMagicLink) && <ChangeEmailForm />}
       {plugins.flatMap((plugin) => {
         const accountCards = Array.isArray(plugin.accountCards)
           ? (plugin.accountCards as ComponentType[])

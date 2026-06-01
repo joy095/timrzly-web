@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 // ─── Types ─────────────────────────────────────────────────────────
 
@@ -279,6 +281,18 @@ const UserDropdown = ({
     { icon: Calendar, label: "Appointments", href: "/appointments" },
   ];
 
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/"); // redirect to login page
+        },
+      },
+    });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -331,7 +345,10 @@ const UserDropdown = ({
       </div>
 
       <div className="border-t border-divider py-2">
-        <button className="flex items-center gap-3 px-5 py-2.5 text-sm text-error hover:bg-error/5 w-full transition-colors">
+        <button
+          onClick={() => handleLogout()}
+          className="flex items-center gap-3 px-5 py-2.5 text-sm text-error hover:bg-error/5 w-full transition-colors cursor-pointer"
+        >
           <LogOut className="w-4 h-4" />
           Sign out
         </button>

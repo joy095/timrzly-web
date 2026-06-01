@@ -3,6 +3,7 @@ import {
   emailOTPClient,
   multiSessionClient,
   organizationClient,
+  twoFactorClient,
 } from "better-auth/client/plugins";
 import { createAuthClient } from "better-auth/react";
 export const authClient = createAuthClient({
@@ -11,12 +12,18 @@ export const authClient = createAuthClient({
 
   fetchOptions: {
     credentials: "include",
+    cache: "no-store",
   },
 
   plugins: [
     organizationClient(),
     emailOTPClient(),
     multiSessionClient(),
+    twoFactorClient({
+      onTwoFactorRedirect() {
+        window.location.href = "/auth/two-factor";
+      },
+    }),
   ],
 });
 

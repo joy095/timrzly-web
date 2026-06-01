@@ -1,6 +1,7 @@
 // middleware.ts
 import { NextRequest, NextResponse } from "next/server";
 import { AUTH_URL } from "./const";
+import { User } from "better-auth";
 
 const AUTH_ROUTES = ["/auth"];
 const PROTECTED_ROUTES = [
@@ -9,7 +10,7 @@ const PROTECTED_ROUTES = [
   "/settings",
   "/appointments",
 ];
-const PUBLIC_ROUTES = ["/"];
+const PUBLIC_ROUTES = ["/", "/test"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -24,12 +25,14 @@ export async function middleware(request: NextRequest) {
       headers: {
         Cookie: cookieHeader,
       },
+      cache: "no-store", // Prevents Next.js from caching the logged-out state
     });
 
     if (response.ok) {
-      const session = (await response.json()) as { user?: unknown };
+      const session = (await response.json()) as { user?: User };
 
-      if (session.user) {
+      // Safely check if session exists before reading .user
+      if (session && session.user) {
         isAuthenticated = true;
       }
     }
