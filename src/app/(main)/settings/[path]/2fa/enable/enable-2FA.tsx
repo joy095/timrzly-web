@@ -40,6 +40,7 @@ import {
   EyeOff,
   Fingerprint,
 } from "lucide-react";
+import { APP_NAME } from "@/const";
 
 // ─── Zod Schemas ─────────────────────────────────────────────
 const totpSchema = z.object({
@@ -105,7 +106,7 @@ export default function Enable2FA({ session }: any) {
 
     const { data, error: enableError } = await authClient.twoFactor.enable({
       password,
-      issuer: "My App",
+      issuer: APP_NAME,
     });
 
     if (enableError) {

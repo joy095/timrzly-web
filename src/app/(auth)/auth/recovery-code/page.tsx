@@ -55,8 +55,8 @@ export default function RecoveryCode() {
   }, []);
 
   const handleChange = (value: string) => {
-    // Allow alphanumeric and hyphens, auto-uppercase
-    const sanitized = value.replace(/[^a-zA-Z0-9-]/g, "").toUpperCase();
+    // Allow alphanumeric and hyphens
+    const sanitized = value.replace(/[^a-zA-Z0-9-]/g, "");
     setCode(sanitized);
     setZodError(null);
     setApiError(null);
@@ -123,7 +123,7 @@ export default function RecoveryCode() {
           variant="ghost"
           size="sm"
           onClick={() => router.push("/login")}
-          className="gap-1 text-muted-foreground hover:text-foreground -ml-2"
+          className="gap-1 text-muted-foreground hover:text-foreground -ml-2 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to login
@@ -177,14 +177,14 @@ export default function RecoveryCode() {
                   autoComplete="off"
                   autoCorrect="off"
                   spellCheck={false}
-                  placeholder="XXXX-XXXX-XXXX-XXXX"
+                  placeholder="XXXX-XXXX"
                   value={code}
                   onChange={(e) => handleChange(e.target.value)}
                   onPaste={handlePaste}
                   onKeyDown={(e) => e.key === "Enter" && verify()}
                   disabled={isLoading}
                   className={cn(
-                    "h-14 text-center text-lg sm:text-xl font-mono tracking-widest uppercase bg-muted border-2 transition-all",
+                    "h-14 text-center text-lg sm:text-xl font-mono tracking-widest bg-muted border-2 transition-all",
                     errorMessage
                       ? "border-destructive/50 focus-visible:ring-destructive/20"
                       : "border-input focus-visible:border-primary focus-visible:ring-primary/20",
@@ -209,7 +209,7 @@ export default function RecoveryCode() {
 
           <CardFooter className="flex-col gap-4 pb-8">
             <Button
-              className="w-full h-11 sm:h-12 gap-2 shadow-lg shadow-primary/20"
+              className="w-full h-11 sm:h-12 gap-2 shadow-lg shadow-primary/20 cursor-pointer"
               onClick={verify}
               disabled={isLoading || code.length < 6}
             >
@@ -231,7 +231,7 @@ export default function RecoveryCode() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground gap-2"
+              className="text-muted-foreground hover:text-foreground gap-2 cursor-pointer"
               onClick={() => router.push("/2fa")}
             >
               <RotateCcw className="w-4 h-4" />

@@ -144,7 +144,7 @@ export default function TwoFactorStatusCard({
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button variant="outline" className="flex-1 h-11 gap-2" asChild>
-                <Link href="/settings/security/2fa/recovery">
+                <Link href="/settings/security/2fa/recovery" className="p-2">
                   Generate Recovery Codes
                 </Link>
               </Button>
@@ -153,7 +153,7 @@ export default function TwoFactorStatusCard({
                 className="flex-1 h-11 gap-2 shadow-sm shadow-destructive/10"
                 asChild
               >
-                <Link href="/settings/security/2fa/disable">
+                <Link href="/settings/security/2fa/disable" className="p-2">
                   <ShieldOff className="w-4 h-4" />
                   Disable 2FA
                 </Link>

@@ -339,8 +339,8 @@ export default function Disable2FA() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground gap-2"
-              onClick={() => router.push("/2fa/recovery")}
+              className="text-muted-foreground hover:text-foreground gap-2 cursor-pointer"
+              onClick={() => router.push("/settings/security/2fa/recovery")}
             >
               <RotateCcw className="w-4 h-4" />
               Try recovery code instead

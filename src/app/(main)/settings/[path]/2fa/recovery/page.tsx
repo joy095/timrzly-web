@@ -227,7 +227,7 @@ export default function GenerateBackupCodesPage() {
                 )}
 
                 <Button
-                  className="w-full h-11 gap-2 shadow-lg shadow-primary/20"
+                  className="w-full h-11 gap-2 shadow-lg shadow-primary/20 cursor-pointer"
                   onClick={verifyAndGenerate}
                   disabled={isLoading}
                 >
