@@ -1,6 +1,7 @@
 "use client";
 
 import { QueryClientProvider } from "@tanstack/react-query";
+import { TanStackDevtools } from "@tanstack/react-devtools";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
@@ -29,6 +30,9 @@ export function Providers({ children }: { children: ReactNode }) {
         {children}
         <Toaster />
       </AuthProvider>
+      <TanStackDevtools
+        
+      />
     </QueryClientProvider>
   );
 }
